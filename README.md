@@ -16,6 +16,6 @@ If you wont to know how to get discord channel id
 https://www.youtube.com/watch?v=NLWtSHWKbAI                                                                                                                      
 DISCORD_CHANNEL_ID = "Your Discord Channel ID"                                                                                                            
 INSTAGRAM_PROFILE_URL = "URL"                                                                                                                            
-If you wont to know your discord bot token 
-https://www.youtube.com/watch?v=aI4OmIbkJH8 
+If you wont to know your discord bot token                                                                                                             
+https://www.youtube.com/watch?v=aI4OmIbkJH8                                                                                                           
 DISCORD_API_KEY = "YOUR KEY"
