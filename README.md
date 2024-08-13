@@ -1,14 +1,14 @@
 # Discord Bot
-Developed this bot to send embeded message of instagram post to the discord.                                                                              
+Developed this bot to send embeded message of instagram post to the discord.                                                                            
 ## Deployment
-To deploy this project run                                                                                                                                
+To deploy this project run                                                                                                                              
 ```bash
   pip install -r requirments.txt
-```                                                                                                                                                       
+```                                                                                                                                                     
 ## Environment Configuration
 Create .env in project root and configure following enviornment variables
 
-If you wont to know how to find Instagram User ID and Access Token watch this video 
+If you wont to know how to find Instagram User ID and Access Token watch this video                                                                       
 https://www.youtube.com/watch?v=4HX8BgQU4z8&t=226s
 
 INSTAGRAM_USER_ID = 'Your Instagram User ID' 
