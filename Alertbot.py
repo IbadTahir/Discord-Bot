@@ -1,7 +1,11 @@
 import discord
+import os
+import dotenv
 from discord.ext import tasks, commands
 import requests
 from datetime import datetime
+
+dotenv.load_dotenv (override=True)
 
 # Initialize the bot with intents
 intents = discord.Intents.default()
@@ -9,17 +13,17 @@ intents.message_content = True
 bot = commands.Bot(command_prefix='!', intents=intents)
 
 # Instagram user ID and Access Token (replace with your values)
-INSTAGRAM_USER_ID = 'Your Instagram User ID'
-INSTAGRAM_ACCESS_TOKEN = 'Your Instagram Access Token'
+INSTAGRAM_USER_ID = os.getenv ("INSTAGRAM_USER_ID")
+INSTAGRAM_ACCESS_TOKEN = os.getenv ("INSTAGRAM_ACCESS_TOKEN")
 
 # Discord channel ID where the bot will send Instagram posts
-DISCORD_CHANNEL_ID = 1255168131249213511
+DISCORD_CHANNEL_ID = os.getenv ("DISCORD_CHANNEL_ID")
 
 # Set to store the IDs of already shared posts
 shared_post_ids = set()
 
 # URL for Instagram logo
-INSTAGRAM_LOGO_URL = "URL"
+INSTAGRAM_PROFILE_URL = os.getenv ("INSTAGRAM_PROFILE_URL")
 
 @bot.event
 async def on_ready():
@@ -58,7 +62,7 @@ async def send_instagram_post(post):
 
     embed = discord.Embed(title=title, url=post.get('permalink', ''), color=0xFF0000, timestamp=post_time)
     embed.set_image(url=post.get('media_url', ''))
-    embed.set_author(name="Instagram", icon_url=INSTAGRAM_LOGO_URL)
+    embed.set_author(name="Instagram", icon_url=INSTAGRAM_PROFILE_URL)
     
     await channel.send(embed=embed)
 
@@ -76,4 +80,4 @@ def get_latest_instagram_posts():
     return []
 
 # Run the bot with the token
-bot.run('Your Bot Token ID')
+bot.run (os.getenv("DISCORD_API_KEY") )
